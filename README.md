@@ -1,4 +1,4 @@
-# Generate and encrypt passwords
+# Generates (pseudo-)random passwords of a desired length
 
 Generates true random passwords using /dev/urandom, with the emphasis on security over pronounceability. It can also encrypt plaintext passwords given in a temporary file.
 
@@ -40,4 +40,8 @@ To produce a total of 7 passwords instead of the default is one password, enter:
 docker run rlesouef/alpine-makepasswd -l 16 -n 7
 ```
 
+To generate an encrypted password:
 
+```
+docker run rlesouef/alpine-makepasswd -p mycriptpassword -e sha1
+```
