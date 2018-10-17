@@ -1,8 +1,7 @@
-FROM debian:jessie
-MAINTAINER Adrian Dvergsdal [atmoz.net]
+FROM alpine:latest
 
-RUN apt-get update && \
-    apt-get -y install makepasswd && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk add --upgrade \
+    makepasswd && \
+    rm -rf /var/cache/apk/*
 
 ENTRYPOINT ["makepasswd"]
